@@ -1,0 +1,36 @@
+out/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.gradle/
+.project
+.settings
+.springBeans
+#*.yml
+### IntelliJ IDEA ###
+*.iml
+*.ipr
+*.iws
+.idea
+*.log*
+
+
+### NetBeans ###
+build/
+dist/
+lib/
+mvnw
+mvnw.cmd
+nbbuild/
+nbdist/
+nbproject/private/
+.mvn/
+.nb-gradle/
+
+junk/src/
+
+src/main/resources/bootstrap-localdev.yml
