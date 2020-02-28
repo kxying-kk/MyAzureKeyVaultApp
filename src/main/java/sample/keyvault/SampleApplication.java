@@ -25,9 +25,9 @@ public class SampleApplication implements CommandLineRunner {
     }
 
     public void run(String... varl) throws Exception {
-        LOGGER.info("property yourSecretPropertyName in Azure Key Vault: {}", mySecretProperty);
+        LOGGER.info("property kkSecretPropertyName in Azure Key Vault: {}", mySecretProperty);
 
-        System.out.println("property yourSecretPropertyName in Azure Key Vault: " + mySecretProperty);
+        System.out.println("property kkSecretPropertyName in Azure Key Vault: " + mySecretProperty);
     }
 
 }
