@@ -12,10 +12,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
 public class SampleApplication implements CommandLineRunner {
-    private static final Logger LOGGER = LoggerFactory.getLogger(SampleApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(SampleApplication.class);
 
     @Value("${kkSecretPropertyName}")
     private String mySecretProperty;
@@ -25,9 +26,16 @@ public class SampleApplication implements CommandLineRunner {
     }
 
     public void run(String... varl) throws Exception {
-        LOGGER.info("property kkSecretPropertyName in Azure Key Vault: {}", mySecretProperty);
+    	logger.info("property kkSecretPropertyName in Azure Key Vault: {}", mySecretProperty);
 
         System.out.println("property kkSecretPropertyName in Azure Key Vault: " + mySecretProperty);
     }
+    
+  @GetMapping("configenv")
+  public String checkConfigEnv(){
+  	logger.debug("mySecretProperty ===>{}", mySecretProperty);    	
+  	return mySecretProperty;
+  }
+    
 
 }
