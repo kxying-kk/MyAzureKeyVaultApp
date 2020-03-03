@@ -1,0 +1,27 @@
+#---
+#spring.profiles: dev
+#spring: 
+#  cloud:
+#    config:
+#      enabled: false
+#    loadbalancer:
+#      ribbon:
+#        enabled: false     
+      
+myvalue: Cloud Value
+      
+#running on PCF - read from VCAP service
+azure:
+  keyvault:
+    uri: ${vcap.services.azure-vault-service.credentials.vaultUri}
+    client-id: ${vcap.services.azure-vault-service.credentials.clientId}
+    client-key: ${vcap.services.azure-vault-service.credentials.clientSecret}
+    tenant-id: ${vcap.services.azure-vault-service.credentials.tenant-id}
+        
+      
+#azure:
+#  keyvault:
+#    client-id: 41964617-8635-4a44-b523-c15015f59f97
+#    client-key: Dm8zxvt5ex_Cs?necm?=fhoSWUj1F08s
+#    uri: https://mykkvault.vault.azure.net/
+#    tenant-id: c921e9e4-4694-495b-a577-b363fb4deb9e

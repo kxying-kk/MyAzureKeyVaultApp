@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: azure-keyvault-demo
+  profiles: local 
+  cloud:
+    config:
+      enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false     
+  
+      
+---
+spring:
+  application:
+    name: azure-keyvault-demo
+  profiles: cloud
+    #active: dev 
+  cloud:
+    config:
+      enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false     
+    
+---
+spring:
+  application:
+    name: azure-keyvault-demo
+  profiles: dev
+    #active: dev 
+  cloud:
+    config:
+      enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false     
+    
+---
+spring:
+  application:
+    name: azure-keyvault-demo
+  profiles: test 
+  cloud:
+    config:
+      enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false     
+  
