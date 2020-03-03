@@ -8,7 +8,8 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false     
-  
+myvalue: Local Value
+kkSecretPropertyName: Local KK Secret  
       
 ---
 spring:
@@ -22,7 +23,9 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false     
-    
+myvalue: Cloud Value
+kkSecretPropertyName: Cloud KK Secret  
+  
 ---
 spring:
   application:
@@ -35,6 +38,15 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false     
+myvalue: Dev Cloud Value
+      
+#running on PCF - read from VCAP service
+azure:
+  keyvault:
+    uri: ${vcap.services.azure-vault-service.credentials.vaultUri}
+    client-id: ${vcap.services.azure-vault-service.credentials.clientId}
+    client-key: ${vcap.services.azure-vault-service.credentials.clientSecret}
+    tenant-id: ${vcap.services.azure-vault-service.credentials.tenant-id}
     
 ---
 spring:
