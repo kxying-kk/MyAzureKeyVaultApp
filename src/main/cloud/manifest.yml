@@ -1,0 +1,16 @@
+---
+    applications:
+    - name: azure-keyvault-demo
+      disk_quota: 1G
+      instances: 1
+      memory: 1G
+      services:
+      #- kk-config-server
+      - azure-vault-service
+      buildpacks:
+      - java_buildpack_offline
+      env:
+       JAVA_OPTS: '-Dspring.profiles.active=local'
+      #SPRING_PROFILES_ACTIVE: dev
+      #need to manually set on cloud
+      #JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: {enabled: false}
