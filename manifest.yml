@@ -1,0 +1,21 @@
+---
+    applications:
+    - name: azure-keyvault-demo
+      disk_quota: 1G
+      instances: 1
+      memory: 1G
+      path: target/azure-keyvault-secrets-spring-boot-sample-0.0.1-SNAPSHOT.jar
+      services:
+      #- kk-config-server
+      - azure-vault-service
+      - MyIntegrationCredHub
+      buildpacks:
+      - java_buildpack_offline
+      env:
+       JAVA_OPTS: '-Dspring.profiles.active=dev'
+      #SPRING_PROFILES_ACTIVE: dev
+       JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+       #SPRING_CREDHUB_URL: https://credhub.service.cf.internal:8844
+       #SPRING_CREDHUB_OAUTH2_CLIENT_ID: 5753c320-daa5-4557-a22e-0f0babb0b5b2
+       #SPRING_CREDHUB_OAUTH2_CLIENT_SECRET: 23fe8758-5813-4373-9801-aa3938cd301b
+       #SPRING_CREDHUB_OAUTH2_ACCESS_TOKEN_URI: https://adfsonekey-auth.login.sys.uat.cf.az.cihs.gov.on.ca/oauth/token       

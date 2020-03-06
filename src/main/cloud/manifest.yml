@@ -7,10 +7,10 @@
       services:
       #- kk-config-server
       - azure-vault-service
+      - MyIntegrationCredHub
       buildpacks:
       - java_buildpack_offline
       env:
-       JAVA_OPTS: '-Dspring.profiles.active=local'
-      #SPRING_PROFILES_ACTIVE: dev
-      #need to manually set on cloud
-      #JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: {enabled: false}
+       JAVA_OPTS: '-Dspring.profiles.active=dev'
+       #SPRING_PROFILES_ACTIVE: dev
+       JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'

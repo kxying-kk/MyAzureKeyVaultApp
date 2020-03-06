@@ -21,12 +21,16 @@ public class SampleApplication implements CommandLineRunner {
     @Value("${kkSecretPropertyName}")
     private String mySecretProperty;
 
+//    @Value("${mykey}")
+//    private String myKeyFromCredHub;
+
     public static void main(String[] args) {
         SpringApplication.run(SampleApplication.class, args);
     }
 
     public void run(String... varl) throws Exception {
         LOGGER.info("property kkSecretPropertyName in Azure Key Vault: {}", mySecretProperty);
+//        LOGGER.info("property myKey From CredHub in Pivotal: {}", myKeyFromCredHub);        
 
         //System.out.println("property kkSecretPropertyName in Azure Key Vault: " + mySecretProperty);
     }    

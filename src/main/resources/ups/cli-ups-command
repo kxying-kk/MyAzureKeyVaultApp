@@ -1,0 +1,2 @@
+cf cups azure-vault-service -p PCF-UPS-4-AzureKeyVault-dev.json
+cf uups azure-vault-service -p PCF-UPS-4-AzureKeyVault-dev.json

@@ -18,18 +18,30 @@ public class TestController {
 
     @Value("${kkSecretPropertyName:kkDefaultSecret}")
     private String mySecretProperty;
+    
     @Value("${myvalue:defaultValue}")
     private String myvalue;
+    
+//    @Value("${mykey}")
+//    private String myKeyFromCredHub;
+    
 
     @GetMapping("configenv")
     public String checkConfigEnv() {
     LOGGER.debug("mySecretProperty ===>{}", mySecretProperty);
     return mySecretProperty;
     }
+    
     @GetMapping("myvalue")
     public String checkMyValue() {
     LOGGER.debug("myvalue ===>{}", myvalue);
     return myvalue;
     }
+
+//    @GetMapping("mykey")
+//    public String checkMyKey() {
+//    LOGGER.debug("mykey ===>{}", myKeyFromCredHub);
+//    return myKeyFromCredHub;
+//    }
     
 }
